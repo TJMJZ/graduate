@@ -1,4 +1,4 @@
-function [beta,n] = getn(x,xmean,xsd,Rx)
+function [x_beta,n] = getn(x,xmean,xsd,Rx)
 [M,N]=size(x);
 for i=1:length(xmean)
            kexi(i)=sqrt(log(1+(xsd(i)/xmean(i))^2)) ;
@@ -12,10 +12,10 @@ for i=1:1:M
 end
 
 for i=1:1:M
-beta(i)=sqrt(n(i,:)*inv(Rx)*transpose(n(i,:)));
+x_beta(i)=sqrt(n(i,:)*inv(Rx)*transpose(n(i,:)));
 end
 
-size(beta);
-beta=beta';
+size(x_beta);
+x_beta=x_beta';
 
 

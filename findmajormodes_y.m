@@ -1,10 +1,9 @@
 %% functionname: function description
-function [xrep,minbeta,minbetaCor] = findMajorModes(xfin,thresh)
+function [xrep,minbeta,minbetaCor] = findmajormodes_y(DP,thresh)
 
 global xmean xcov xsd corrMatrix
-
-[dpbeta,DP]=getn(xfin,xmean,xsd,corrMatrix);
-
+DPbackup = DP;
+dpbeta = sqrt(sum((DP.^2),2));
 %sort
 [dpbeta,DP,OldInd]=sortbeta(dpbeta,DP);
 %oldint is the original number of the ranked beta&design point
@@ -54,6 +53,6 @@ end
 minbetaCor=R(betaind,betaind);
 betaind=OldInd(betaind);
 %here beta index is the same as those in FOSdata
-xrep=xfin(betaind,:);
+xrep=DPbackup(betaind,:);
 
 

@@ -1,6 +1,7 @@
 clear
 clc
-global xmean xsd xcov corrMatrix 
+global xmean xsd xcov corrMatrix xr
+global codeFolder reviseFolder
 xmean = [8000 38 1-0.2863 4641 2.00E-05*1.03e-6];  
 xsd = [4000 6 0.065 8808 1.55E-05*1.03e-6];
  xcov = xsd./xmean;
@@ -9,6 +10,11 @@ corrMatrix=[1,0,0,0,0
     0,0,1,0,0
     0,0,0,1,0
     0,0,0,0,1];
+xr = corrMatrix;
+codeFolder = 'F:\mjz\revisedp\svm';
+reviseFolder = 'F:\mjz\FLAC700_2\Exe32';
+
+
 totalNum = 3000;
 input = load('fosList.dat');
 thresh = 1e-3;
@@ -76,3 +82,11 @@ mcfail = Sample100Set1(find(mcClasses(:,1)==1),:);
 sysfp = calPfFun(xrep)
 
 [dpbeta,dpR] = GetBetaR(xrep);
+
+
+xrep = xrep(1,:);
+[reviseddp] = revisedp(xrep);
+sysfp_rvs = calPfFun(reviseddp);
+differ = gety(xrep)-reviseddp;
+betadiffer = sqrt(sum(differ.^2));
+fpdiffer = abs(sysfp-sysfp_rvs)/sysfp_rvs;
