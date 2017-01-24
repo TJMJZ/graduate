@@ -2,8 +2,7 @@
 function [ratioResult,fail] = callflac_mjz_ratio(flac_cal_para)
 	
 	global codeFolder reviseFolder
-reviseFolder = 'D:\flacfolder\FLAC700\Exe32';
-codeFolder='D:\±œ“µ\svm';
+
 
 ratiolimit = 1e-3;
 tempLocation = [reviseFolder '\temp.txt'];
