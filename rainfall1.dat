@@ -35,8 +35,13 @@ def io_c_phi
     ;rainfall amount
     rf_amt=float(parse(iptRaw(1),7))
     ; rf_amt=2e-7
+
+    ; rainfall time 
+    rf_time = float(parse(iptRaw(1),8))
+    ; rf_time = 2160000
+
     ; ini suction
-    inisuction=float(parse(iptRaw(1),8))
+    inisuction=-float(parse(iptRaw(1),9))
     ; inisuction=-100000
     van_n = 1.0/(1.0-van_a)
     se_ini = ((-inisuction/van_p0)^van_n + 1.0)^(-van_a)
@@ -44,9 +49,7 @@ def io_c_phi
     theta_r = 0.2
     theta_ini = se_ini*(theta_s-theta_r)+theta_r
         ; sw_ini = se_ini * (1.0 - rs_1) + rs_1
-    ; rainfall time 
-    rf_time = float(parse(iptRaw(1),9))
-    ; rf_time = 2160000
+
 end
 io_c_phi
 
