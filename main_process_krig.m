@@ -4,7 +4,7 @@ global xmean xsd xcov corrMatrix xr
 global codeFolder reviseFolder
 xmean = [8000 38 0.2863 4641 2.00E-05*1.03e-6];  
 xsd = [4000 6 0.065 8808 1.55E-05*1.03e-6];
- xcov = xsd./xmean;
+xcov = xsd./xmean;
 corrMatrix=[1,0,0,0,0
     0,1,0,0,0
     0,0,1,0,0
