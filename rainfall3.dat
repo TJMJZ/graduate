@@ -214,7 +214,7 @@ def io_fos
     temp4 = string(rf_amt)+' '+string(rf_time)+' '
     temp5 = string(inisuction)+' '
     rst = string(fosoutput)
-    output(1) = temp1+temp2+temp3+temp4+temp5+rst
+    output(1) = temp1+temp2+temp3+rst
     status = open(rstFilename, IO_WRITE, IO_ASCII)
     status = write(output,o_size)
     status = close
