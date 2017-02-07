@@ -5,7 +5,7 @@
 % fosList.dat in exefolder/data/rstidstr
 
 sstv_id
-
+cd(exefolder);
 if ~exist('data')
   mkdir('data')
 else
@@ -95,5 +95,5 @@ cd(rstfolder)
 
   copyfile(TEMPRSTNAME,rstidfstr);
 
-
+cd(exefolder);
 

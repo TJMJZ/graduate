@@ -61,10 +61,10 @@ for sstv_id = 1:sstvm
   % program parameters
   circlePara = addNum(orgPara);
   % program parameters
-  cd(exeFolder);
+
   check_flacenv
   flacscript
-  cd(exefolder);
+
 
 end
 
