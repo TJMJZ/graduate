@@ -10,9 +10,9 @@ global xmean xcov xsd corrMatrix xr
 global totalNum
 global dataFolder exeFolder codeFolder
 
-dataFolder = 'F:\mjz\svm\reliability1206\data';
-exeFolder = 'F:\mjz\svm\FLAC700_001\Exe32';
-codeFolder = 'F:\mjz\svm\reliability1206';
+dataFolder = 'F:\graduate\data';
+exeFolder = 'E:\biye\FLAC700_002\Exe32';
+codeFolder = 'F:\graduate';
 
 
 ksatcvt = 1.03e-3;
