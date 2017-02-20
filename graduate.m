@@ -42,6 +42,16 @@ RSTF_NAME = ['result1.txt';'result2.txt';'result3.txt';'result4.txt'];
 FLAG = 4;
 % program settings
 
+
+for i = 4:5
+  ztemp = zeros(1,5);
+  ztemp(1,i) = -1;
+  testfp(i,:) = getx(ztemp);
+  rvsfp(i,:) = binary_flac(testfp(i,:));
+end
+
+
+
 orgPara_notscreened = genParaFun(lowerBound,upperBound);
 
 % sstv structure
@@ -53,9 +63,12 @@ sstv = [2 36 10
 [sstvm,sstvn] = size(sstv);
 
 for sstv_id = 1:sstvm
-
-  orgPara = betascreen(orgPara_notscreened,1,4);
+    
+  testl = 2.75-0.25*sstv_id;
+  testu = testl+2.5;
+  orgPara = betascreen(orgPara_notscreened,testl,testu);
   tempa = 1-orgPara(:,3);
+
   orgPara(:,3) = tempa;
 
   % program parameters

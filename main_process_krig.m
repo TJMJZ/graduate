@@ -35,7 +35,7 @@ sampleRangeU = 0;
 % load data and initialize
 input_flac = load('fosList.dat');
 input_flac(:,1) = [];
-
+input_flac = unique(input_flac,'rows', 'stable' );
 % a to b convert
 % a b relationship a = 1-b is in original(which is x) space
 xmean(:,APOSITION) = 1-xmean(:,APOSITION);
