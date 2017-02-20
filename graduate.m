@@ -36,7 +36,7 @@ end
 PARADIR = [1 1 -1 1 -1];
 
 
-totalNum = 100;
+totalNum = 1000;
 lowerBound = -4;
 upperBound = 0.25;
 lbdir = lowerBound*PARADIR;
@@ -57,36 +57,27 @@ PAUSE_FLAC = 1;
 TEMPLOC = [exeFolder '\temp.txt'];
 INILOC = [exeFolder '\flac.ini'];
 FLACCMD = 'call ';
-FLACF_NAME = ['rainfall1.dat';'rainfall2.dat';'rainfall3.dat';'rainfall4.dat'];
+FLACF_NAME = ['rainfallfos1.dat';'rainfallfos2.dat';'rainfallfos3.dat';'rainfallfos4.dat'];
 RSTF_NAME = ['result1.txt';'result2.txt';'result3.txt';'result4.txt'];
 FLAG = 4;
 % program settings
-
-
-for i = 4:5
-  ztemp = zeros(1,5);
-  ztemp(1,i) = -1;
-  testfp(i,:) = getx(ztemp);
-  rvsfp(i,:) = binary_flac(testfp(i,:));
-end
-
 
 
 % sstv structure
 % rainfall amount: unit 1e-7
 % rainfall time: unit hour
 % initial suction: unit kpa ; positive
-sstv = [2 24 10
-        2 48 10
-        2 72 10];
+sstv = [5 6 5
+        5 12 5
+        5 18 5];
 [sstvm,sstvn] = size(sstv);
 
 for sstv_id = 1:sstvm
     
   testl = 0;
-  testu = 5;
+  testu = 4;
   orgPara = betascreen(orgPara_notscreened,testl,testu);
-  orgPara(:,3) = tempa;
+
 
   % program parameters
   circlePara = addNum(orgPara);

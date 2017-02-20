@@ -37,6 +37,7 @@ circlePara = [circlePara this_set_p];
 i = 1;
 while i <cirM
   flagcount = 0;
+  delete('*.fsv');
   while flagcount<FLAG
 
       flagcount=flagcount+1;
@@ -95,5 +96,5 @@ cd(rstfolder)
 
   copyfile(TEMPRSTNAME,rstidfstr);
 
-cd(exeFolder);
+cd(codeFolder);
 
