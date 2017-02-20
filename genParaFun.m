@@ -12,8 +12,7 @@ end
 
 
 %the following code is to draw samples from original space 
-xmin=exp(lamda+lowerBound*kexi);
-xmax=exp(lamda+upperBound*kexi);
+
 
 
 
