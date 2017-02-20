@@ -5,7 +5,7 @@
 % fosList.dat in exefolder/data/rstidstr
 
 sstv_id
-cd(exefolder);
+cd(exeFolder);
 if ~exist('data')
   mkdir('data')
 else
@@ -26,7 +26,7 @@ rainfall_hour = sstv(sstv_id,2);
 ini_suction_kpa = sstv(sstv_id,3);
 rainfall_amt = rainfall_amt_cvt*(1e-7);
 rainfall_time = rainfall_hour*3600;
-ini_suction = ini_suction*1000;
+ini_suction = ini_suction_kpa*1000;
 this_set = [rainfall_amt rainfall_time ini_suction]
 rstidfstr = strcat(num2str(rainfall_amt),'_',num2str(rainfall_hour),'_',num2str(ini_suction));
 
@@ -95,5 +95,5 @@ cd(rstfolder)
 
   copyfile(TEMPRSTNAME,rstidfstr);
 
-cd(exefolder);
+cd(exeFolder);
 
