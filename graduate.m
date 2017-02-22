@@ -18,7 +18,7 @@ codeFolder = 'F:\graduate';
 ksatcvt = 1.03e-3;
 % interface
 xmean = [8000 38 0.2863 4641 2.00E-05*ksatcvt];  
-xsd = [4000 6 0.065 8808 1.55E-05*ksatcvt];
+xsd = [3000 4 0.065 8808 1.55E-05*ksatcvt];
  xcov = xsd./xmean;
 corrMatrix=[1,0,0,0,0
     0,1,0,0,0
@@ -36,7 +36,7 @@ end
 PARADIR = [1 1 -1 1 -1];
 
 
-totalNum = 1000;
+totalNum = 7500;
 lowerBound = -4;
 upperBound = 0.25;
 lbdir = lowerBound*PARADIR;
@@ -64,20 +64,18 @@ FLAG = 4;
 
 
 % sstv structure
-% rainfall amount: unit 1e-7
+% rainfall amount: unit 1e-4
 % rainfall time: unit hour
 % initial suction: unit kpa ; positive
-sstv = [5 6 5
-        5 12 5
-        5 18 5];
+sstv = [1 4 5];
 [sstvm,sstvn] = size(sstv);
 
 for sstv_id = 1:sstvm
     
   testl = 0;
-  testu = 4;
+  testu = 3;
   orgPara = betascreen(orgPara_notscreened,testl,testu);
-
+  size(orgPara)
 
   % program parameters
   circlePara = addNum(orgPara);

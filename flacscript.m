@@ -24,7 +24,7 @@ end
 rainfall_amt_cvt = sstv(sstv_id,1);
 rainfall_hour = sstv(sstv_id,2);
 ini_suction_kpa = sstv(sstv_id,3);
-rainfall_amt = rainfall_amt_cvt*(1e-7);
+rainfall_amt = rainfall_amt_cvt*(1e-4);
 rainfall_time = rainfall_hour*3600;
 ini_suction = ini_suction_kpa*1000;
 this_set = [rainfall_amt rainfall_time ini_suction]
